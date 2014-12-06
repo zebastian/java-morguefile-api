@@ -11,12 +11,13 @@ String morgueResponse = mf_api.call("archive/search/new/1/cats", Morguefile.MF_A
 
 JsonParser jsonParser = new JsonParser();
 JsonElement root = jsonParser.parse(morgueResponse);
-JsonArray images = root.getAsJsonObject().get("response").getAsJsonObject().get("doc").getAsJsonArray();
+JsonArray images = root.getAsJsonObject().get("response")
+                    .getAsJsonObject().get("doc").getAsJsonArray();
 
 for(int i = 0; i < images.size(); i++){
   String image_url = images.get(i).getAsJsonObject()
-    .get("Archive").getAsJsonObject()
-    .get("file_path_small").getAsString();
+                      .get("Archive").getAsJsonObject()
+                      .get("file_path_small").getAsString();
   System.out.println(image_url);
 }
 ```
