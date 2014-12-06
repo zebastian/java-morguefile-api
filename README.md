@@ -3,7 +3,7 @@ java-morguefile-api
 
 Java Class for accessing the API of [morguefile.com](https://www.morguefile.com)
 
-## Example usage: ##
+### Example usage: ###
 
 ```java
 Morguefile mf_api = new Morguefile("YOUR_ID", "YOUR_SECRET");
