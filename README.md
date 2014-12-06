@@ -14,6 +14,9 @@ JsonElement root = jsonParser.parse(morgueResponse);
 JsonArray images = root.getAsJsonObject().get("response").getAsJsonObject().get("doc").getAsJsonArray();
 
 for(int i = 0; i < images.size(); i++){
-  System.out.println(images.get(i).getAsJsonObject().get("Archive").getAsJsonObject().get("file_path_small").getAsString());
+  String image_url = images.get(i).getAsJsonObject()
+    .get("Archive").getAsJsonObject()
+    .get("file_path_small").getAsString();
+  System.out.println(image_url);
 }
 ```
